@@ -25,3 +25,11 @@ function submitForm(){
 	theForm.elements["textArea"].value = window.frames['rtf'].document.body.innerHTML;
 	theForm.submit();
 }
+// entering a new paragraph on every newline
+rtf.addEventListener('keypress', function(e) {
+    if (e.keyCode == '13') {
+        e.preventDefault();
+        rtf.document.execCommand('insertParagraph', false);
+        rtf.document.execCommand('formatBlock', false, 'p');
+    }
+}, false);
