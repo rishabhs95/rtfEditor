@@ -24,10 +24,8 @@
         <form action="output.php" name="editor" id="editor" method="post">
             <div id="wysiwyg_cp" class="row">
                 <a onClick="bold()"> <i class="fa fa-bold" name="bold"></i> </a>
-                <a onClick="italic()"> <i class="fa fa-italic"></i> </a>
                 <a onClick="underline()"> <i class="fa fa-underline"></i> </a>
                 <a onClick="link()"> <i class="fa fa-link"></i> </a>
-                <a onClick="unLink()"> <i class="fa fa-unlink"></i> </a>
                 <a onClick="foreColor()" style="color: red;">Red</a>
             </div>
             <!-- Hide(but keep)your normal textarea and place in the iFrame replacement for it -->
@@ -41,6 +39,7 @@
         <h3>
             Embedded Links <i class="fa fa-angle-down"></i>
         </h3>
+        <ol id="links"></ol>
     </div>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
