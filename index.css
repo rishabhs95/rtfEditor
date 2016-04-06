@@ -1,21 +1,24 @@
 body {
-	font-family: 'Poiret One', cursive;
+    font-family: 'Poiret One', cursive;
 }
+
 ::-webkit-input-placeholder {
-   color: #3264ff;
+    color: #3264ff;
 }
+
 #headerRight {
-	float: right;
-	font-size: 25px;
-	margin: 15px 10px 0px 0px;
-	padding: 0px 15px 0px 15px;
-	color: #25aa6d;
-	border: solid 1px;
-	border-radius: 30px;
-	display: block;
+    float: right;
+    font-size: 25px;
+    margin: 15px 10px 0px 0px;
+    padding: 0px 15px 0px 15px;
+    color: #25aa6d;
+    border: solid 1px;
+    border-radius: 30px;
+    display: block;
 }
+
 #headerLeft {
-	clear: both;
+    clear: both;
     display: inline-block;
     font-size: 30px;
     text-align: left;
@@ -25,14 +28,17 @@ body {
     border: solid 1px;
     /*color: #3264ff;*/
 }
+
 #rtf {
-	min-height: 50vw;
-	border: none;
+    min-height: 50vw;
+    border: none;
 }
+
 #editor_cp {
-	margin-left: 9%;
+    margin-left: 9%;
 }
+
 .editor_cp_button {
-	border: 1px solid #8f8f8f;
-	padding: 2px 2px 2px 5px;
+    border: 1px solid #8f8f8f;
+    padding: 2px 2px 2px 5px;
 }
