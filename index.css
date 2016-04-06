@@ -1,0 +1,31 @@
+body {
+	font-family: 'Poiret One', cursive;
+}
+::-webkit-input-placeholder {
+   color: #3264ff;
+}
+#headerRight {
+	float: right;
+	font-size: 25px;
+	margin: 10px 10px 0px 0px;
+	padding: 0px 15px 0px 15px;
+	color: #25aa6d;
+	border: solid 1px;
+	border-radius: 30px;
+	display: block;
+}
+#headerLeft {
+	clear: both;
+    display: inline-block;
+    font-size: 30px;
+    text-align: left;
+    margin: 10px 0px 0px 10px;
+    padding: 0px 5px 0px 5px;
+    color: #8f8f8f;
+    border: solid 1px;
+    /*color: #3264ff;*/
+}
+#rtf {
+	min-height: 50vw;
+	border: none;
+}

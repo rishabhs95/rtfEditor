@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <title>rtfEditor</title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body onLoad="frame()">
+    <span id="headerLeft">
+        rtfEditor 
+    </span>
+    <a id="headerRight" onClick="submitForm()"> 
+        Publish <i class="fa fa-paper-plane-o"></i> 
+    </a>
+    <hr>
+    <div class="container">
+        <h3 style="margin-left: 2%;">Tell your story...<h4>
+        <form action="output.php" name="editor" id="editor" method="post">
+            <div id="wysiwyg_cp" class="row">
+                <a onClick="bold()"> <i class="fa fa-bold" name="bold"></i> </a>
+                <a onClick="italic()"> <i class="fa fa-italic"></i> </a>
+                <a onClick="underline()"> <i class="fa fa-underline"></i> </a>
+                <a onClick="link()"> <i class="fa fa-link"></i> </a>
+                <a onClick="unLink()"> <i class="fa fa-unlink"></i> </a>
+                <a onClick="foreColor()" style="color: red;">Red</a>
+            </div>
+            <!-- Hide(but keep)your normal textarea and place in the iFrame replacement for it -->
+            <textarea style="display:none;" name="textArea" id="textArea"></textarea>
+            <iframe name="rtf" id="rtf" class="col-md-12"></iframe>
+            <!-- End replacing your normal textarea -->
+        </form>
+    </div>
+    <hr>
+    <div class="container">
+        <h3>
+            Embedded Links <i class="fa fa-angle-down"></i>
+        </h3>
+    </div>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
