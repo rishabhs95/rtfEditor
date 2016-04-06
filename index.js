@@ -15,11 +15,13 @@ function underline() {
 function link() {
     var linkURL = prompt("Enter the URL for this link:", "http://");
     rtf.document.execCommand("CreateLink", false, linkURL);
-    if (linkCounter % 2 == 0)
-        $('<li> <a href="' + linkURL + '">' + linkURL + '</a></li>').appendTo('#links');
-    else
-        $('<li> <a style="color:red;" href="' + linkURL + '">' + linkURL + '</a></li>').appendTo('#links');
-    linkCounter += 1;
+    if (linkURL !== null) {
+	    if (linkCounter % 2 == 0)
+	        $('<li> <a href="' + linkURL + '">' + linkURL + '</a></li>').appendTo('#links');
+	    else
+	        $('<li> <a style="color:red;" href="' + linkURL + '">' + linkURL + '</a></li>').appendTo('#links');
+	    linkCounter += 1;
+	}
 }
 
 function foreColor() {
@@ -30,6 +32,50 @@ function submitForm() {
     var theForm = document.getElementById("editor");
     theForm.elements["textArea"].value = window.frames['rtf'].document.body.innerHTML;
     theForm.submit();
+}
+
+// replacing all four lettered words to random words
+function randomize() {
+	var text = window.frames['rtf'].document.body.innerHTML;
+	// preprocessing text
+	console.log(text);
+	for (var i=0; i<text.length; i++) {
+		if (text[i] === '>')
+			text = text.substring(0, i+1) + ' ' + text.substring(i+1, text.length);
+		else if (text[i] === '<') {
+			text = text.substring(0, i) + ' ' + text.substring(i, text.length);
+			i++;
+		}
+		else if (text[i] === '.' || text[i] === ',') {
+			text = text.substring(0, i) + ' ' + text.substring(i, text.length);
+			i++;
+		}
+	}
+	console.log(text);
+	//replacing with random words
+	if (text !== '') {
+		var words = text.split(' ');
+	    for (var i = 0; i < words.length; i++) {
+	        if (words[i].length === 4) {
+	        	if (words[i][0] !== '<' || words[i][3] !== '>') {
+	        		console.log("init " + words[i]);
+	        		jQuery.ajaxSetup({async:false});
+	        		$.get("http://randomword.setgetgo.com/get.php", function(data){
+						words[i] = data;
+					});
+					console.log("final " + words[i]);
+	        	}
+	        }
+	    }
+	    text = '';
+	    for (var i = 0; i < words.length; i++) {
+	    	if (words[i+1] !== '.' && words[i+1] !== ',')
+	    		text += ' ';
+	    	text += words[i];
+	    }
+	    window.frames['rtf'].document.body.innerHTML = text;
+	}
+	console.log(text);
 }
 
 // entering a new paragraph on every newline
