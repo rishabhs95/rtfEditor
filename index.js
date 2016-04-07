@@ -14,8 +14,8 @@ function underline() {
 
 function link() {
     var linkURL = prompt("Enter the URL for this link:", "http://");
-    rtf.document.execCommand("CreateLink", false, linkURL);
     if (linkURL !== null) {
+    	rtf.document.execCommand("CreateLink", false, linkURL);
 	    if (linkCounter % 2 == 0)
 	        $('<li> <a href="' + linkURL + '">' + linkURL + '</a></li>').appendTo('#links');
 	    else
