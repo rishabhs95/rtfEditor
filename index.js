@@ -98,8 +98,14 @@ $(rtf).bind('mouseup', function(e){
     }
     
     if (selection.toString() !== '') {
-    	console.log(selection);
-    	//alert('"' + selection.toString() + '" was selected at ' + e.pageX + '/' + e.pageY);
+    	editor = document.getElementById('editor_cp');
+	    editor.style.top = e.pageY + 50 + 'px';
+	    editor.style.left = e.pageX + -50 + 'px';
+    }
+    else {
+    	editor = document.getElementById('editor_cp');
+	    editor.style.top = 0 + 'px';
+	    editor.style.left = 0 + 'px';
     }
 });
 

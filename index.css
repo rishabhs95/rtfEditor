@@ -35,10 +35,13 @@ body {
 }
 
 #editor_cp {
+	z-index:1;
+    position: relative;
     margin-left: 9%;
 }
 
 .editor_cp_button {
     border: 1px solid #8f8f8f;
     padding: 2px 2px 2px 5px;
+    background-color: #ffffff;
 }
