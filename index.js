@@ -38,7 +38,6 @@ function submitForm() {
 function randomize() {
 	var text = window.frames['rtf'].document.body.innerHTML;
 	// preprocessing text
-	console.log(text);
 	for (var i=0; i<text.length; i++) {
 		if (text[i] === '>')
 			text = text.substring(0, i+1) + ' ' + text.substring(i+1, text.length);
@@ -51,19 +50,16 @@ function randomize() {
 			i++;
 		}
 	}
-	console.log(text);
 	//replacing with random words
 	if (text !== '') {
 		var words = text.split(' ');
 	    for (var i = 0; i < words.length; i++) {
 	        if (words[i].length === 4) {
 	        	if (words[i][0] !== '<' || words[i][3] !== '>') {
-	        		console.log("init " + words[i]);
 	        		jQuery.ajaxSetup({async:false});
 	        		$.get("http://randomword.setgetgo.com/get.php", function(data){
 						words[i] = data;
 					});
-					console.log("final " + words[i]);
 	        	}
 	        }
 	    }
@@ -75,7 +71,6 @@ function randomize() {
 	    }
 	    window.frames['rtf'].document.body.innerHTML = text;
 	}
-	console.log(text);
 }
 
 // entering a new paragraph on every newline
