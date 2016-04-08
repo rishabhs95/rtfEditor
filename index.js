@@ -87,4 +87,20 @@ rtf.addEventListener('keypress', function(e) {
     }
 }, false);
 
+// tooltip on text selection
+$(rtf).bind('mouseup', function(e){
+    var selection;
+    
+    if (window.frames['rtf'].getSelection) {
+    	selection = window.frames['rtf'].getSelection();
+    } else if (window.frames['rtf'].document.selection) {
+    	selection = window.frames['rtf'].document.selection.createRange();
+    }
+    
+    if (selection.toString() !== '') {
+    	console.log(selection);
+    	//alert('"' + selection.toString() + '" was selected at ' + e.pageX + '/' + e.pageY);
+    }
+});
+
 //draggable and droppable paragraphs
