@@ -103,5 +103,3 @@ $(rtf).bind('mouseup', function(e){
 	    editor.style.left = 0 + 'px';
     }
 });
-
-//draggable and droppable paragraphs
